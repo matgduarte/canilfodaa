@@ -1,0 +1,96 @@
+:root{
+    --cor1: #87BF3F;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-family: "Inter", sans-serif;
+    outline: none;
+    text-decoration: none;
+    transition: 0.2s linear;
+}
+
+/*header*/
+
+header{
+    background-color: var();
+    height: 100px;
+    width: 100vw;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    background-color: rgb(44, 44, 44);
+}
+
+.logo{
+  color: white;
+}
+
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu > li {
+    position: relative;
+    display: inline-block;
+    margin: 50px;
+    text-align: center;
+    width: 140px;
+}
+
+.menu > li > p {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.menu > li > p:hover {
+    transition: 0.1s linear;
+}
+
+/* Estilo para o submenu */
+.submenu {
+    display: none;
+    position: absolute;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    top: 100%;
+    left: 0;
+    width: auto;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(44, 44, 44);
+}
+
+.submenu li a {
+    display: inline;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    display: block;
+    padding: 14px 20px;
+}
+
+.submenu li a:hover {
+
+}
+
+/* Mostrar o submenu quando o item principal é hover */
+.menu > li:hover .submenu {
+    display: block;
+}
