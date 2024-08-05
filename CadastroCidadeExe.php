@@ -11,6 +11,7 @@ include('includes/conexao.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dados da Cidade</title>
     <link rel="stylesheet" href="header_footer.css">
+    <link rel="stylesheet" href="cadastro.css">
 </head>
 <body>
 <div class="container">

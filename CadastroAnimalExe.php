@@ -16,6 +16,7 @@ include('includes/conexao.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dados do Animal</title>
     <link rel="stylesheet" href="header_footer.css">
+    <link rel="stylesheet" href="cadastro.css">
 </head>
 <body>
 <div class="container">
@@ -57,7 +58,6 @@ include('includes/conexao.php');
         $especie = $_POST['especie'];
         $raça = $_POST['raça'];
         $data_nascimento = $_POST['data_nascimento'];
-        $idade = $_POST['idade'];
         $castrado = $_POST['castrado'];
         echo "<h1>Dados do Animal</h1>";
         echo "Nome do Animal: $nome_animal<br>";
@@ -69,7 +69,7 @@ include('includes/conexao.php');
         echo "Estado: $estado<br>";
         
         $sql =  "INSERT INTO Animal (nome_animal,especie,raça,data_nascimento,idade,castrado)";
-        $sql .= " VALUES ('".$nome_animal."','".$especie."','".$raça."','".$data_nascimento."','".$idade."','".$castrado."')";
+        $sql .= " VALUES ('".$nome_animal."','".$especie."','".$raça."','".$data_nascimento."','".$castrado."')";
         echo "<p>" . $sql . "</p>";
         $result = mysqli_query($con,$sql);
         if($result){

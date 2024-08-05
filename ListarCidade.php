@@ -25,15 +25,15 @@
             <?php
             while ($row = mysqli_fetch_array($result)) {
                 echo "<tr>";
-                echo "<td>" . htmlspecialchars($row['nome']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['nome_cidade']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['estado']) . "</td>";
-                echo "<td><a href='alteraCidade.php?id=" . htmlspecialchars($row['id_cidade']) . "'>Alterar</a></td>";
-                echo "<td><a href='deletarCidade.php?id_cidade=" . htmlspecialchars($row['id_cidade']) . "'>Deletar</a></td>";
+                echo "<td><a href='alteraCidade.php?id=".$row['id_cidade']."'>Alterar</a></td>";
+                echo "<td><a href='deletarCidade.php?id=".$row['id_cidade']."'>Deletar</a></td>";
                 echo "</tr>";
             }
             ?>
         </table>
-        <button class="btn"><a href="./index.php">Voltar</a></button>
+        <button class="btn"><a href="./index.html">Voltar</a></button>
     </div>
 </body>
 </html>

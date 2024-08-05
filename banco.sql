@@ -11,7 +11,7 @@ CREATE TABLE Pessoa (
     endereço VARCHAR(100),
     bairro VARCHAR(100),
     cep VARCHAR(9),
-    id_cidade,
+    id_cidade INT,
     foreign key(id_cidade, Cidade)
 );
 CREATE TABLE Animal (
