@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cidades</title>
+    <title>Deletar Cliente</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="header_footer.css">
 </head>
@@ -45,31 +45,33 @@
             </div>
         </header>
         <main>
-    <?php
+    <h1>Deletar Cliente</h1>
+    <?php 
     include('includes/conexao.php');
-    $sql = "SELECT * FROM Cidade";
-    $result = mysqli_query($con, $sql);
+
+    // Verifica se o ID do cliente foi passado via GET
+    if (isset($_GET['id_cliente'])) {
+        $id_cidade = $_GET['id_cliente'];
+        
+        // Escapa o valor do ID para evitar SQL injection
+        $id_cliente = mysqli_real_escape_string($con, $id_cliente);
+
+        // Executa o comando de exclusão
+        $sql = "DELETE FROM Pessoa WHERE id_cliente = '$id_cliente'";
+        $result = mysqli_query($con, $sql);
+        
+        // Verifica se a exclusão foi bem-sucedida
+        if ($result) {
+            echo "<h2>Dados deletados com sucesso!</h2>";
+        } else {
+            echo "<h2>Erro ao deletar os dados!</h2>";
+            echo "<h2>" . mysqli_error($con) . "</h2>";
+        }
+    } else {
+        echo "<h2>ID do Cliente não fornecido!</h2>";
+    }
     ?>
-        <h1>Consulta de Cidade</h1>
-        <table align="center" border="1" width="500">
-            <tr>
-                <th>Nome da Cidade</th>
-                <th>Estado</th>
-                <th>Alterar</th>
-                <th>Deletar</th>
-            </tr>
-            <?php
-            while ($row = mysqli_fetch_array($result)) {
-                echo "<tr>";
-                echo "<td>" . htmlspecialchars($row['nome_cidade']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['estado']) . "</td>";
-                echo "<td><a href='alteraCidade.php?id=".$row['id_cidade']."'>Alterar</a></td>";
-                echo "<td><a href='deletarCidade.php?id=".$row['id_cidade']."'>Deletar</a></td>";
-                echo "</tr>";
-            }
-            ?>
-        </table>
-        </main>
+</main>
         <footer></footer>
     </div>
 </body>

@@ -24,6 +24,7 @@ header{
     justify-content:space-around;
     align-items: center;
     background-color: rgb(44, 44, 44);
+    z-index: 100;
 }
 
 .logo{
@@ -39,6 +40,7 @@ header{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    z-index: 120;
 }
 
 .menu > li {
@@ -74,6 +76,7 @@ header{
     justify-content: space-around;
     align-items: center;
     background-color: rgb(44, 44, 44);
+    z-index: 120;
 }
 
 .submenu li a {

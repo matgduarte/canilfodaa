@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deletar Cidade</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="header_footer.css">
 </head>
+
 <body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <p>Canil da Prefeitura</p>
+            </div>
+            <div>
+                <nav class="">
+                    <ul class="menu">
+                        <li>
+                            <p>Pessoa</p>
+                            <ul class="submenu">
+                                <li><a href="CadastroPessoa.php"><p>Cadastro</p></a></li>
+                                <li><a href="ListarPessoa.php"><p>Consulta</p></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Animal</p>
+                            <ul class="submenu">
+                                <li><a href="CadastroAnimal.php"><p>Cadastro</p></a></li>
+                                <li><a href="ListarAnimal.php"><p>Consulta</p></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Cidade</p>
+                            <ul class="submenu">
+                                <li><a href="CadastroCidade.php"><p>Cadastro</p></a></li>
+                                <li><a href="ListarCidade.php"><p>Consulta</p></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
     <h1>Deletar Cidade</h1>
     <?php 
     include('includes/conexao.php');
@@ -33,6 +71,9 @@
         echo "<h2>ID da cidade não fornecido!</h2>";
     }
     ?>
-    <button class="btn"><a href="index.php">Voltar</a></button>
+</main>
+        <footer></footer>
+    </div>
 </body>
+
 </html>

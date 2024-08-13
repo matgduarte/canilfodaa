@@ -1,3 +1,11 @@
+
+<?php
+    include('includes/conexao.php');
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM Cliente WHERE id=$id";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_array($result);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,41 +54,41 @@
             </header>
         <div class="main">
             <div class="form-box">
-            <form action="CadastroPessoaExe.php" method="post">
+            <form action="alteraPessoaExe.php" method="post">
                 <h2>Cadastro do Cliente</h2>
                 <div class="form-group">
-                    <input type="text" name="nome_pessoa" id="nome_pessoa" required>
+                    <input type="text" name="nome_pessoa" id="nome_pessoa" required value="<?php echo $row['nome_pessoa']?>">
                     <label for="nome_pessoa">Nome do Cliente</label>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="email" id="email" required>
+                    <input type="text" name="email" id="email" required value="<?php echo $row['email']?>">
                     <label for="email">Email</label>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="endereço" id="endereço" required>
+                    <input type="text" name="endereço" id="endereço" required value="<?php echo $row['endereço']?>">
                     <label for="endereço">Endereço</label>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="bairro" id="bairro" required>
+                    <input type="text" name="bairro" id="bairro" required value="<?php echo $row['biarro']?>">
                     <label for="bairro">Bairro</label>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="cep" id="cep" required>
+                    <input type="text" name="cep" id="cep" required value="<?php echo $row['cep']?>">
                     <label for="cep">CEP</label>
                 </div>
                 <div class="form-group2">
-                    <label for="cidade">Cidade:</label>
-                        <select name="cidade" id="cidade">
-                        <?php
-                            $sqlCidades = "SELECT * FROM Cidade";
-                            $resultCidades = mysqli_query($con, $sqlCidades);
-                            while($rowCidade = mysqli_fetch_array($resultCidades)){
-                                $selected = ($rowCidade['id_cidade'] == $row['id_cidade']) ? 'selected' : '';
-                                echo "<option value='".$rowCidade['id_cidade']."' $selected>".$rowCidade['nome_cidade']."/".$rowCidade['estado']."</option>";
-                            }
-                        ?>
-                        </select>
-                    </div>
+                <label for="cidade">Cidade:</label>
+                    <select name="cidade" id="cidade">
+                    <?php
+                        $sqlCidades = "SELECT * FROM Cidade";
+                        $resultCidades = mysqli_query($con, $sqlCidades);
+                        while($rowCidade = mysqli_fetch_array($resultCidades)){
+                            $selected = ($rowCidade['id_cidade'] == $row['id_cidade']) ? 'selected' : '';
+                            echo "<option value='".$rowCidade['id_cidade']."' $selected>".$rowCidade['nome_cidade']."/".$rowCidade['estado']."</option>";
+                        }
+                    ?>
+                    </select>
+                </div>
 
                 <div class="form-group4">
                     <button type="submit" class="btn">Cadastrar</button>

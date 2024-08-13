@@ -58,14 +58,13 @@
         </header>
         <div class="main">
             <div class="form-box">
-                <fieldset>
                     <form action="CadastroCidadeExe.php" method="post">
                         <h2>Cadastro de Cidade</h2>
                         <div class="form-group">
+                        <input type="text" name="nome_cidade" id="nome_cidade" required>
                             <label for="nome">Nome da Cidade</label>
-                            <input type="text" name="nome_cidade" id="nome_cidade" required>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group2">
                             <label for="estado">Estado</label>
                             <select name="estado" id="estado" required>
                                 <option value="SP">SP</option>
@@ -74,11 +73,10 @@
                                 <option value="ES">ES</option>
                             </select>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group4">
                             <button type="submit" class="btn">Cadastrar</button>
                         </div>
                     </form>
-                </fieldset>
             </div>
         </div>
     </div>
